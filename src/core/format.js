@@ -1,4 +1,4 @@
-import { tf } from '../locale/locale';
+import { tf } from '../locale';
 
 const formatStringRender = v => v;
 
@@ -90,21 +90,14 @@ const baseFormats = [
   },
 ];
 
-// const formats = (ary = []) => {
-//   const map = {};
-//   baseFormats.concat(ary).forEach((f) => {
-//     map[f.key] = f;
-//   });
-//   return map;
-// };
-const formatm = {};
+
+const formats = {};
 baseFormats.forEach((f) => {
-  formatm[f.key] = f;
+  formats[f.key] = f;
 });
 
-export default {
-};
+export default formats;
 export {
-  formatm,
+  formats,
   baseFormats,
 };

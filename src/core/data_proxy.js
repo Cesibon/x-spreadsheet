@@ -12,7 +12,7 @@ import { Cols } from './col';
 import { Validations } from './validation';
 import { CellRange } from './cell_range';
 import { expr2xy, xy2expr } from './alphabet';
-import { t } from '../locale/locale';
+import { t } from '../locale';
 
 // private methods
 /*

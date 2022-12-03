@@ -10,7 +10,7 @@
  * @property {function} title
  * @property {function} render
  */
-import { tf } from '../locale/locale';
+import { tf } from '../locale';
 import { numberCalc } from './helper';
 
 /** @type {Formula[]} */
@@ -74,25 +74,15 @@ const baseFormulas = [
   */
 ];
 
-const formulas = baseFormulas;
 
-// const formulas = (formulaAry = []) => {
-//   const formulaMap = {};
-//   baseFormulas.concat(formulaAry).forEach((f) => {
-//     formulaMap[f.key] = f;
-//   });
-//   return formulaMap;
-// };
-const formulam = {};
+const formulas = {};
 baseFormulas.forEach((f) => {
-  formulam[f.key] = f;
+  formulas[f.key] = f;
 });
 
-export default {
-};
+export default formulas;
 
 export {
-  formulam,
   formulas,
   baseFormulas,
 };

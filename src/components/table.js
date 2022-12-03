@@ -1,8 +1,8 @@
 import { stringAt } from '../core/alphabet';
 import { getFontSizePxByPt } from '../core/font';
 import _cell from '../core/cell';
-import { formulam } from '../core/formula';
-import { formatm } from '../core/format';
+import formulas from '../core/formula';
+import formats from '../core/format';
 
 import {
   Draw, DrawBox, thinLineWidth, npx,
@@ -32,22 +32,6 @@ function getDrawBox(data, rindex, cindex, yoffset = 0) {
   } = data.cellRect(rindex, cindex);
   return new DrawBox(left, top + yoffset, width, height, cellPaddingWidth);
 }
-/*
-function renderCellBorders(bboxes, translateFunc) {
-  const { draw } = this;
-  if (bboxes) {
-    const rset = new Set();
-    // console.log('bboxes:', bboxes);
-    bboxes.forEach(({ ri, ci, box }) => {
-      if (!rset.has(ri)) {
-        rset.add(ri);
-        translateFunc(ri);
-      }
-      draw.strokeBorders(box);
-    });
-  }
-}
-*/
 
 export function renderCell(draw, data, rindex, cindex, yoffset = 0) {
   const { sortedRowMap, rows, cols } = data;
@@ -76,13 +60,13 @@ export function renderCell(draw, data, rindex, cindex, yoffset = 0) {
     // render text
     let cellText = '';
     if (!data.settings.evalPaused) {
-      cellText = _cell.render(cell.text || '', formulam, (y, x) => (data.getCellTextOrDefault(x, y)));
+      cellText = _cell.render(cell.text || '', formulas, (y, x) => (data.getCellTextOrDefault(x, y)));
     } else {
       cellText = cell.text || '';
     }
     if (style.format) {
       // console.log(data.formatm, '>>', cell.format);
-      cellText = formatm[style.format].render(cellText);
+      cellText = formats[style.format].render(cellText);
     }
     const font = Object.assign({}, style.font);
     font.size = getFontSizePxByPt(font.size);

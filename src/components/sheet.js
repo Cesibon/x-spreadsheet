@@ -18,7 +18,7 @@ import ModalValidation from './modal_validation';
 import SortFilter from './sort_filter';
 import { xtoast } from './message';
 import { cssPrefix } from '../config';
-import { formulas } from '../core/formula';
+import formulas from '../core/formula';
 
 /**
  * @desc throttle fn

@@ -6,7 +6,7 @@ import FormInput from './form_input';
 import Dropdown from './dropdown';
 // Record: temp not used
 // import { xtoast } from './message';
-import { tf } from '../locale/locale';
+import { tf } from '../locale';
 
 class DropdownMore extends Dropdown {
   constructor(click) {

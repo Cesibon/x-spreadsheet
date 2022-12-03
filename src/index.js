@@ -1,10 +1,10 @@
 /* global window, document */
-import { h } from './component/element';
+import { h } from './components/element';
 import DataProxy from './core/data_proxy';
-import Sheet from './component/sheet';
-import Bottombar from './component/bottombar';
+import Sheet from './components/sheet';
+import Bottombar from './components/bottombar';
 import { cssPrefix } from './config';
-import { locale } from './locale/locale';
+import { locale } from './locale';
 import './index.less';
 
 
